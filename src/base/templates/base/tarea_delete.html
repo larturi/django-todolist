@@ -1,0 +1,9 @@
+<a href="{% url 'tareas' %}">Volver</a>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    <p>Vas a eliminar la tarea: {{ tarea }}</p>
+
+    <input type="submit" value="Eliminar">
+</form>

@@ -1,0 +1,12 @@
+<h1>Nueva Tarea</h1>
+
+<a href="{% url 'tareas' %}">Volver</a>
+
+<form action="" method="POST">
+
+    {% csrf_token %} 
+    {{ form.as_p }}
+
+    <input type="submit" value="Guardar">
+
+</form>
