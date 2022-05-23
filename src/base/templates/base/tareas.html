@@ -1,15 +1,18 @@
 {% if request.user.is_authenticated %}
-    <p>{{ request.user }}</p>
-    <a href="{% url 'logout' %}">Salir</a> 
-{% else %}
-    <a href="{% url 'login' %}">Login</a> 
-{% endif %}
+<p>{{ request.user }}</p>
+<a href="{% url 'salir' %}">Salir</a> {% else %}
+<a href="{% url 'login' %}">Login</a> {% endif %}
 
 <hr>
 
 <h1>Lista de Pendientes</h1>
 
 <a href="{% url 'crear-tarea' %}">Crear Tarea</a>
+
+<form method="GET">
+    <input type="text" name="buscador" value="{{ valor_busqueda }}">
+    <input type="submit" value="Buscar">
+</form>
 
 <table>
     <tr>
