@@ -1,4 +1,9 @@
+{% extends 'base/layout.html' %} 
+
+{% block content %} 
+
 {% if request.user.is_authenticated %}
+
 <p>{{ request.user }}</p>
 <a href="{% url 'salir' %}">Salir</a> {% else %}
 <a href="{% url 'login' %}">Login</a> {% endif %}
@@ -25,7 +30,6 @@
     {% for tarea in tareas %}
     <tr>
         <td>{{ tarea.title }}</td>
-        <td><a href="{% url 'tarea' tarea.id %}">Ver</a></td>
         <td><a href="{% url 'editar-tarea' tarea.id %}">Editar</a></td>
         <td><a href="{% url 'eliminar-tarea' tarea.id %}">Eliminar</a></td>
     </tr>
@@ -36,3 +40,5 @@
     </tr>
     {% endfor %}
 </table>
+
+{% endblock content %}
