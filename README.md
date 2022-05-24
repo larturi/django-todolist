@@ -9,6 +9,7 @@ pipenv install
 
 Ejecutar servidor local
 ```
+cd src
 python manage.py runserver 
 ```
 
