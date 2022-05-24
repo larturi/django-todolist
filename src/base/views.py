@@ -35,15 +35,16 @@ class Register(FormView):
             return redirect('tareas')
         return super().get(self.request, *args, **kwargs)
 
-class ListaPendientes(LoginRequiredMixin, ListView):
+class ListaTareas(LoginRequiredMixin, ListView):
     model = Tarea
     context_object_name = 'tareas'
     template_name = 'base/tareas.html'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['tareas'] = context['tareas'].filter(user=self.request.user, completed=False)
-        context['count'] = context['tareas'].filter(completed=False).count()
+        context['tareas'] = context['tareas'].filter(user=self.request.user)
+        context['tareas'] = context['tareas'].order_by('completed')
+        context['count'] = context['tareas'].filter(completed=False).count()        
         
         valor_busqueda = self.request.GET.get('buscador') or ''
         

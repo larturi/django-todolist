@@ -3,7 +3,7 @@ from django.contrib.auth.views import LogoutView
 from .views import (
     Login,
     Register,
-    ListaPendientes, 
+    ListaTareas, 
     DetalleTarea, 
     CrearTarea, 
     EditarTarea, 
@@ -11,7 +11,7 @@ from .views import (
 )
 
 urlpatterns = [
-    path('', ListaPendientes.as_view(), name='tareas'),
+    path('', ListaTareas.as_view(), name='tareas'),
     path('login/', Login.as_view(), name='login'),
     path('salir/', LogoutView.as_view(next_page='login'), name='salir'),
     path('registro/', Register.as_view(), name='registro'),

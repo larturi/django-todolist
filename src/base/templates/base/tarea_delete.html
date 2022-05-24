@@ -2,14 +2,18 @@
 
 {% block content %} 
 
-<a href="{% url 'tareas' %}">Volver</a>
+<div class="container">
 
-<form action="" method="POST">
-    {% csrf_token %}
+    <a href="{% url 'tareas' %}">Volver</a>
 
-    <p>Vas a eliminar la tarea: {{ tarea }}</p>
+    <form action="" method="POST">
+        {% csrf_token %}
 
-    <input type="submit" value="Eliminar">
-</form>
+        <p>Vas a eliminar la tarea: {{ tarea }}</p>
+
+        <input type="submit" value="Eliminar">
+    </form>
+
+</div>
 
 {% endblock content %} 
