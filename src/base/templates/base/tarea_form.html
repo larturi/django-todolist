@@ -1,18 +1,15 @@
-{% extends 'base/layout.html' %} 
+{% extends 'base/layout.html' %} {% block content %}
 
-{% block content %} 
+<div class="navbar">
+    <a href="{% url 'tareas' %} ">⬅ Volver</a>
+</div>
 
-<h1>Nueva Tarea</h1>
+<div class="form-container">
 
-<a href="{% url 'tareas' %}">Volver</a>
+    <form method="POST" action="">
+        {% csrf_token %} {{ form.as_p }}
+        <input type="submit" value="Guardar" class="button">
+    </form>
+</div>
 
-<form action="" method="POST">
-
-    {% csrf_token %} 
-    {{ form.as_p }}
-
-    <input type="submit" value="Guardar">
-
-</form>
-
-{% endblock content %} 
+{% endblock content %}

@@ -2,13 +2,28 @@
 
 {% block content %} 
 
-<h1>Registrarse</h1>
+<div class="navbar">
+    <h1>Registrarse</h1>
+</div>
 
-<form action="" method="POST">
-    {% csrf_token %} {{ form.as_p }}
-    <input type="submit" value="Registrar">
-</form>
+<div class="form-container">
 
-<p>Ya tienes una cuenta? <a href="{% url 'login' %}">Ingresa</a></p>
+    <form action="" method="POST">
+        {% csrf_token %} 
+        <label> {{ form.username.label }}</label>
+        {{ form.username }}
+
+        <label> {{ form.password1.label }}</label>
+        {{ form.password1 }}
+
+        <label> {{ form.password2.label }}</label>
+        {{ form.password2 }}
+
+        <input type="submit" value="Registrar" class="button" style="margin-top: 1rem;">
+    </form>
+
+    <p style="text-align: center;">Ya tienes una cuenta? <a href="{% url 'login' %}">Ingresa</a></p>
+
+</div>
 
 {% endblock content %} 

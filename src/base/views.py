@@ -68,6 +68,7 @@ class CrearTarea(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('tareas')
     
     def form_valid(self, form):
+        print(form)
         form.instance.user = self.request.user
         return super().form_valid(form)
     

@@ -32,13 +32,13 @@
                     <div class="icono-tarea-completa"></div>
                     <a href="{% url 'editar-tarea' tarea.id %}">{{tarea}}</a>
                 </div>
-                <a class="eliminar-tarea" href="{% url 'eliminar-tarea' tarea.id %}">&#x2A2F;</a>
+                <a class="eliminar-tarea" href="{% url 'eliminar-tarea' tarea.id %}">❌</a>
             {% else %}
                 <div class="titulo-tarea">
                     <div class="icono-tarea-incompleta"></div>
                     <a href="{% url 'editar-tarea' tarea.id %}">{{tarea}}</a>
                 </div>
-                <a class="eliminar-tarea" href="{% url 'eliminar-tarea' tarea.id %}">&#x2A2F;</a>
+                <a class="eliminar-tarea" href="{% url 'eliminar-tarea' tarea.id %}">❌</a>
             {% endif %}
         </div>    
     {% empty %}

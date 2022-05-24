@@ -1,14 +1,16 @@
-{% extends 'base/layout.html' %} 
+{% extends 'base/layout.html' %} {% block content %}
 
-{% block content %} 
+<div class="navbar">
+    <h1>Login</h1>
+</div>
 
-<h1>Login</h1>
+<div class="form-container">
+    <form action="" method="POST">
+        {% csrf_token %} {{ form.as_p }}
+        <input type="submit" value="Ingresar" class="button" style="margin: 20px 0;">
+    </form>
 
-<form action="" method="POST">
-    {% csrf_token %} {{ form.as_p }}
-    <input type="submit" value="Ingresar">
-</form>
+    <p style="text-align: center;">No tienes una cuenta? <a href="{% url 'registro' %}"><u>Registrate</u></a></p>
+</div>
 
-<p>No tienes una cuenta? <a href="{% url 'registro' %}">Registrate</a></p>
-
-{% endblock content %} 
+{% endblock content %}

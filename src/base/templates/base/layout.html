@@ -17,32 +17,37 @@
             padding-top: 3rem;
             background-color: #a76bdc;
         }
-
+        
         .container {
             max-width: 800px;
             margin: 0 auto;
             background-color: #fff;
             color: #a76bdc;
-            padding: 1rem;
             border-radius: 5px;
             -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
             box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
         }
-
-        h1, h2, h3, h4, h5, h6 {
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Lato', sans-serif;
             font-weight: 100;
             color: #fff
         }
-
-        a, p {
+        
+        a,
+        p {
             color: #fff;
         }
-
+        
         a {
             text-decoration: none;
         }
-
+        
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -51,59 +56,62 @@
             border-radius: 5px 5px 0 0;
             background: linear-gradient(90deg, #a76bdc, #dcb22d);
         }
-
+        
         .tareas-container {
             margin-top: 1rem;
         }
-
+        
         .tarea {
             display: flex;
             justify-content: space-between;
             padding: 20px;
             border-bottom: 1px solid #ccc;
         }
-
+        
         .titulo-tarea {
             display: flex;
         }
-
+        
         .titulo-tarea a {
             text-decoration: none;
             color: #a76bdc;
             margin-left: 10px;
         }
-
+        
         .icono-tarea-completa {
             height: 20px;
             width: 20px;
             background-color: #80C41F;
             border-radius: 50px;
         }
-
+        
         .icono-tarea-incompleta {
             height: 20px;
             width: 20px;
             background-color: #eee;
             border-radius: 50px;
         }
-
+        
         .eliminar-tarea {
             text-decoration: none;
             font-weight: 900;
             color: #a76bdc;
-            font-size: 22px;
+            font-size: 16px;
+            margin-top: 12px;
             line-height: 0;
         }
-
+        
         .buscador-container {
             display: flex;
             justify-content: space-between;
             margin-top: 1rem;
+            padding: 0px 25px;
         }
-
+        
         .agregar-tarea {
             background: #ca056f;
             font-size: 33px;
+            margin: 14px 0;
             justify-content: space-between;
             color: white;
             width: 40px;
@@ -111,8 +119,8 @@
             border-radius: 100%;
             text-align: center;
         }
-
-        input[type="text"], 
+        
+        input[type="text"],
         input[type="password"],
         textarea {
             width: 97%;
@@ -121,12 +129,13 @@
             border: 1px solid #ccc;
             margin-top: 10px;
         }
-
+        
         label {
             padding-top: 10px !important;
             display: block;
+            float: left;
         }
-
+        
         .button {
             border: 1px solid #a76bdc;
             background-color: #fafafa;
@@ -134,18 +143,40 @@
             padding: 10px;
             font-size: 14px;
             border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
         }
-
+        
         .button.btn-buscar {
             height: 39px;
             margin-left: 4px;
             margin-top: 10px;
         }
-
+        
         .form-buscador {
-            display: flex; 
-            margin-top: 20px; 
+            display: flex;
+            margin-top: 20px;
             width: 300px;
+        }
+        
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        
+        .form-container p {
+            color: #a76bdc;
+        }
+        
+        .form-container a {
+            color: #a76bdc;
+        }
+        
+        #id_completed {
+            margin: 13px 8px;
         }
     </style>
 </head>
@@ -153,9 +184,7 @@
 <body>
 
     <div class="container">
-        {% block content %} 
-
-        {% endblock content %}
+        {% block content %} {% endblock content %}
     </div>
 
 </body>
